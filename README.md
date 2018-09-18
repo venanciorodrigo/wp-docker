@@ -13,7 +13,7 @@ In few seconds you'll have an environment ready to develop :wink:
 ## How to Start?
 
 * Clone this repo and replace the credentials on `docker-compose.yml` and `setup.sh` (if you judge this necessary).
-* Navigate through the repo on your computer and type `docker-compose up -d`
+* Navigate through the project folder on your computer and type `docker-compose up -d`
 
 This command will magically download all the necessary things to your project including the latest Wordpress version available :boom:
 
