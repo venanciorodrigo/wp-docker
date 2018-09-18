@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  wpdb:
+    build: .
+    container_name: mysqldb
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+    restart: always
+  wp:
+    depends_on:
+      - wpdb
+    links:
+      - wpdb
+    image: wordpress
+    container_name: wp-container
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8080:80"
+    environment:
+      DB_USER: root
+      DB_PASSWORD: somewordpress
+      DB_HOST: wpdb
+    restart: always
